@@ -1,0 +1,103 @@
+/*
+ * This top section is just some preperational stuff,
+ * jump down to `input wrapper` to see the important CSS
+ */
+
+
+/** type */
+
+body { padding: 18px 20px; }
+
+body, input, textarea, select, button {
+    font: normal 13px/18px helvetica, arial, hirakakupro-w3, osaka, "ms pgothic", sans-serif;
+    color: #333;
+}
+
+h1 { font-size: 15px; font-weight: bold; margin-bottom: 18px; }
+
+/* **/
+
+/** base input CSS */
+
+input.text,
+textarea {
+    position: relative;
+    display: -moz-inline-box; /* ff2 */
+    display: inline-block;
+    *display: inline; /* ie6&7 */
+    zoom: 1;
+    margin: 4px 0;
+    border: 1px solid #bbb;
+    padding: 5px 7px;
+    font-size: 15px;
+    vertical-align: top;
+    -khtml-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -khtml-appearance: none;
+    -moz-appearance: none;
+}
+
+textarea {
+    height: 90px;
+    width: 200px;
+}
+
+input.text {
+    height: 16px;
+    line-height: 16px;
+}
+
+input.text:-moz-first-node { /* ff hack - fix jacked line heights */
+    padding-top: 6px;
+    padding-bottom: 4px;
+}
+
+/* **/
+
+/** input wrapper */
+
+.input-wrapper {
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    *display: inline; /* ie6&7 */
+    zoom: 1;
+    margin: 4px 0;
+    border: 1px solid #bbb;
+    background: #fff;
+    line-height: 18px;
+    vertical-align: middle;
+}
+
+.input-wrapper input.text,
+.input-wrapper textarea {
+    z-index: 2;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    *background: url(http://hunch.com/media/img/t.png); /* ie7 does weird stuff with transparent background, also please don't deep link to this image from your code */
+}
+
+.input-wrapper label {
+    z-index: 1;
+    position: absolute;
+    height: 16px;
+    padding: 5px 7px;
+    font-size: 15px;
+    line-height: 16px;
+    color: #999;
+    overflow: hidden;
+}
+
+.input-wrapper.focus label {
+    filter:alpha(opacity=50);
+    opacity: 0.4;
+}
+
+.input-wrapper.filled label {
+    display: none;
+}
+
+/* **/
