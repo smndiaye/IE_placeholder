@@ -2,7 +2,7 @@
  * Persistent Placeholder - treats a label like a placeholder and
  * makes it persist even when you focus on an input. Huzzah!
  */
-(function($) {
+jQuery(function($) {
 
     var parentSelector = '.input-wrapper',
         inputSelectors = [parentSelector + '>input.text', parentSelector + '>textarea'],
@@ -42,4 +42,4 @@
         }
     });
 
-})(jQuery);
+});
