@@ -1,17 +1,10 @@
-/*
- * Persistent Placeholder - treats a label like a placeholder and
- * makes it persist even when you focus on an input. Huzzah!
- */
 jQuery(function($) {
 
-    var parentSelector = '.input-wrapper',
-        inputSelectors = [parentSelector + '>input.text', parentSelector + '>textarea'],
-        len = inputSelectors.length,
-        i;
+    var input = '.input-wrapper>textarea';
 
     function update(force) {
         var $input = $(this),
-            $parent = $input.parent(parentSelector);
+            $parent = $input.parent('.input-wrapper');
         return $parent[force === true || $input.val() ? 'addClass' : 'removeClass']('filled');
     }
 
@@ -32,14 +25,8 @@ jQuery(function($) {
         return this.each(update);
     };
 
-    for (i = 0; i < len; i++) {
-        $(inputSelectors[i]).live('focus', focus).live('blur', blur).live('keyup', update).live('click', update).live('keydown', keydown);
-    }
+    $(input).live('focus', focus).live('blur', blur).live('keyup', update).live('click', update).live('keydown', keydown);
 
-    $(function() {
-        for (i = 0; i < len; i++) {
-            $(inputSelectors[i]).prepareInput();
-        }
-    });
+    $(input).prepareInput();
 
 });

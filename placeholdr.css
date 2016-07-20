@@ -2,7 +2,7 @@ input.text,
 textarea {
     position: relative;
     display: -moz-inline-box; /* ff2 */
-    *display: inline; /* ie6&7 */
+    *display: inline; /* IE*/
     border: 1px solid #bbb;
     padding: 7px 7px;
     font-size: 15px;
@@ -21,7 +21,7 @@ textarea {
     position: relative;
     display: -moz-inline-box;
     display: inline-block;
-    *display: inline; /* ie6&7 */
+    *display: inline; /* IE*/
     border: 0px solid #bbb;
     line-height: 18px;
     vertical-align: middle;
